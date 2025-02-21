@@ -1,12 +1,10 @@
 CREATE TABLE employees (
   id INT NOT NULL,
-  name VARCHAR NOT NULL,
-  boss_id INT
+  data JSONB NOT NULL
 );
 
 INSERT INTO 
-  employees (id, name, boss_id) 
+  employees (id, data) 
 VALUES 
-  (1, 'Big Boss', NULL),
-  (2, 'Employee 1', 1),
-  (3, 'Independent Guy', NULL);
+  (1, '{}'::jsonb),
+  (2, '{"name": "test"}'::jsonb);

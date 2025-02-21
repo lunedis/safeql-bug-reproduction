@@ -1,25 +1,23 @@
 import postgres from "postgres";
 
+interface Data { }
+
 export const sql = postgres(
   "postgres://postgres:postgres@localhost:5432/postgres", {
     transform: postgres.camel,
   }
 );
 
-// safeql generates wrong type assertions
-sql<{ id: string; name: string; bossName: string }[]>`
+// .eslintrc.json assigns "Data[]" to be the type of employees.data, but it gets switched up one place to the CTE type instead.
+sql<{ value: Data[]; data: any }[]>`
+  WITH cte AS (
     SELECT 
-      employees.id,
-      employees.name,
-      bosses.name AS boss_name
-    FROM employees
-    LEFT JOIN employees AS bosses ON (employees.boss_id = bosses.id);`;
-
-// safeql generates wrong type assertions
-sql<{ id: string; name: string; bossName: string }[]>`
-    SELECT 
-      e.id,
-      e.name,
-      bosses.name AS boss_name
+      e.id AS id,
+      'value' AS value
     FROM employees AS e
-    LEFT JOIN employees AS bosses ON (e.boss_id = bosses.id);`;
+  )
+  SELECT 
+    cte.value,
+    data
+  FROM employees AS e
+  LEFT JOIN cte USING (id);`;

@@ -8,8 +8,7 @@ services:
     ports:
       - '5432:5432'
 
-
-  adminer:
-    image: adminer:4.8.1
-    ports:
-      - '4001:8080'
+  # adminer:
+  #   image: adminer:4.8.1
+  #   ports:
+  #     - '4001:8080'
