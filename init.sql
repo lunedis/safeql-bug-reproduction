@@ -1,10 +1,3 @@
 CREATE TABLE employees (
-  id INT NOT NULL,
-  data JSONB NOT NULL
+  id uuid primary key
 );
-
-INSERT INTO 
-  employees (id, data) 
-VALUES 
-  (1, '{}'::jsonb),
-  (2, '{"name": "test"}'::jsonb);
