@@ -1,6 +1,4 @@
-# ts-safeql recursive outer join bug
-
-Reproduction repo for https://github.com/ts-safeql/safeql/issues/204
+# ts-safeql bug reproduction
 
 ## How to reproduce
 
@@ -8,3 +6,10 @@ Reproduction repo for https://github.com/ts-safeql/safeql/issues/204
 ```
 docker compose up -d
 ```
+
+2) run eslint
+```
+npx eslint .
+```
+
+3) See error that should not be there.
