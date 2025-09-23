@@ -7,5 +7,5 @@ export const sql = postgres(
 );
 
 const x = sql<{ division: string; count: number }[]>`
-SELECT division, count(division) from employees group by division 
+  SELECT division, count(division) from employees group by division 
 `;
