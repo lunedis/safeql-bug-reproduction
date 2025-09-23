@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "target": "es2021",
     "module": "commonjs",
     "declaration": true,
@@ -11,6 +12,6 @@
     "outDir": "./dist",
     "incremental": true,
   },
-  "include": ["src/**/*"],
+  "include": ["**/*.ts", "eslint.config.js"],
   "exclude": ["node-modules/**/*"],
 }

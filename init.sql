@@ -1,3 +1,4 @@
 CREATE TABLE employees (
-  id uuid primary key
+  id int primary key,
+  division text not null default ''
 );

@@ -6,13 +6,6 @@ export const sql = postgres(
   }
 );
 
-type Uuid = string & { __opaque__: "Uuid" };
-
-sql<{ id: Uuid }[]>`
-SELECT id FROM employees;
- `;
-
-const id = "abc" as Uuid;
-
-sql<{ id: Uuid }[]>`
-INSERT INTO employees (id) VALUES (${id}) RETURNING id;`;
+const x = sql<{ division: string; count: number }[]>`
+SELECT division, count(division) from employees group by division 
+`;
