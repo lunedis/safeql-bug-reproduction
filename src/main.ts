@@ -7,7 +7,7 @@ export const sql = postgres(
 );
 
 
-const x = sql<{ id: number; division: string; list: number[] | null }[]>`
+const x = sql<{ id: number; name: string; list: number[] | null }[]>`
   with subquery as (
     select a_id, array_agg(b_id) as list
     from b
