@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@ts-safeql/eslint-plugin": "4.0.1",
+    "@ts-safeql/eslint-plugin": "4.0.7",
     "eslint": "^9.36.0",
     "libpg-query": "^17.6.0",
     "typescript": "^5.9.2",
